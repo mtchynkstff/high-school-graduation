@@ -1,47 +1,130 @@
 # High School Graduation Prediction Project
-## Overview
 
-This project is designed to analyze factors influencing high school graduation rates using student data, including course grades, yearly absences, and state testing scores. The code utilizes machine learning techniques to predict whether a student is likely to graduate based on these factors.
+This project analyzes factors influencing on-time high school graduation and
+regular attendance using machine learning. It is designed as a practical example of how a school district might build an early-warning system to identify students who may need additional support.
 
-## Usage Instructions
-### Prerequisites
-Before running the notebook, ensure that you have the following installed:
-* Python 3.x
-* Jupyter Notebook
-* Required Python libraries (install using the command below if necessary):
+🔗 For more information, you can read my full blog write-up on [Random Forests for the Trees](https://randomforestforthetrees.medium.com/from-student-learning-to-machine-learning-predicting-high-school-graduation-with-data-318497426015).
 
-`pip install pandas numpy scikit-learn matplotlib seaborn`
+📑 Additionally, you can download the full project presentation [here]((reports/Plymouth-HS_Data-Analysis_013025.pdf)).
 
-## Running the Notebook
-1. Open the Jupyter Notebook environment:
 
-`jupyter notebook`
+---
 
-2. Load the `Plymouth-Graduation-Project-Final-Clean_020325.ipynb` file.
+## 📁 Repository Structure
 
-3. The notebook is structured into the following sections:
-* **Data Import & Preprocessing**: Loads the dataset (not included for privacy reasons) and cleans the data.
-* **Exploratory Data Analysis (EDA)**: Visualizes key trends and distributions in student performance.
-* **Feature Engineering**: Transforms raw data into meaningful features for modeling.
-* **Model Training & Evaluation**: Trains a machine learning model (likely a Random Forest) to predict graduation likelihood.
-* **Feature Importance Analysis**: Identifies the most influential factors affecting graduation.
-* **Model Interpretation & Conclusions**: Summarizes findings and insights from the model.
+```text
+data/                    # synthetic or local student-level dataset (not tracked)
+notebooks/               # main analysis notebook
+reports/
+  figures/               # exported charts for README & slides
+  Plymouth_Graduation_Project_Presentation.pdf   # slide deck (de-identified)
+src/                     # helper scripts (e.g., synthetic data generator)
+requirements.txt         # dependencies
+README.md                # project documentation
+```
 
-## Notes on Data Privacy
-The dataset is not included in this repository to protect student privacy. If you have access to the appropriate dataset, ensure that it is formatted correctly before running the notebook.
+---
 
-## Summary of Code
-The core components of the project include:
-* **Data Cleaning**: Handling missing values, encoding categorical features, and standardizing numerical data.
-* **Data Visualization**: Generating histograms, bar charts, and pairwise plots to explore data relationships.
-* **Machine Learning Model**: Implementing and training a Random Forest classifier to predict student graduation outcomes.
-* **Feature Importance Analysis**: Using SHAP values and feature importance scores to explain model predictions.
+## 🚀 How to Run
 
-## Future Improvements
-* **Hyperparameter Tuning**: Optimizing model parameters for better performance.
-* **Additional Data Sources**: Incorporating socioeconomic or behavioral data for improved predictions.
-* **Model Deployment**: Creating a web app or dashboard to make predictions accessible to educators.
+Install dependencies:
 
-## Contact Information
+```bash
+pip install -r requirements.txt
+```
 
-For questions or collaboration opportunities, please email me at [mitchell.yenkastoff@gmail.com](mailto:mitchell.yenkastoff@gmail.com).
+Generate synthetic data:
+
+```bash
+python src/generate_synthetic.py
+```
+
+This will create:
+
+```text
+data/synthetic_graduation_data.csv
+```
+
+Then launch Jupyter:
+
+```bash
+jupyter notebook notebooks/Plymouth-Graduation-Project-Final-Clean_020325.ipynb
+```
+
+Update the notebook to point at `data/synthetic_graduation_data.csv` when running
+outside your secure district environment.
+
+---
+
+## ▶️ Open in Google Colab
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](
+https://colab.research.google.com/github/mtchynkstff/high-school-graduation/blob/main/notebooks/Plymouth-Graduation-Project-Final-Clean_020325.ipynb)
+
+---
+
+## 📊 Problem & Data
+
+**Goal**
+
+Predict whether a student will:
+
+- Graduate on time, and
+- Maintain regular attendance,
+
+based on their historical academic, behavioral, and assessment records. The intent is
+to support earlier, targeted interventions rather than to label students.
+
+**Conceptual features**:
+
+- GPA and course grades
+- Attendance rate and absences
+- Credits earned toward graduation
+- Assessment scores (e.g., ELA, Math)
+
+**Targets**:
+
+- `on_time_graduation` (1/0)
+- `regular_attendance` (1/0)
+
+The public version of this repo uses **synthetic data** only.
+
+---
+
+## 🧠 Methods
+
+The main notebook is organized into the following stages:
+
+1. **Data import & cleaning**
+2. **Exploratory data analysis (EDA)**
+3. **Feature engineering**
+4. **Modeling with Random Forest (and baselines)**
+5. **Evaluation (ROC-AUC, precision/recall, confusion matrices)**
+6. **Explainability with feature importance and SHAP**
+7. **Insights, limitations, and next steps**
+
+---
+
+## 🖼️ Figures
+
+![Feature importance for graduation model](reports/figures/feature_importance.png)
+![Correlation Heatmap](reports/figures/correlation_heatmap.png)
+
+
+---
+
+## 🔒 Privacy
+
+- The original project used real student data protected under FERPA.
+- This public repository contains **no real student-level data**.
+- Any example CSVs are synthetic and generated by `src/generate_synthetic.py`.
+
+---
+
+## 📌 Next Steps
+
+- Add hyperparameter tuning and calibration.
+- Add a fairness/bias evaluation section by subgroup.
+- Build a simple Streamlit app using the synthetic data as a demo.
+
+_Last updated: 2025-11-14_
