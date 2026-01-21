@@ -26,46 +26,16 @@ These artifacts were created for non-technical stakeholders and reflect how insi
 
 ## 📁 Repository Structure
 
-data/                    # synthetic or local student-level dataset (not tracked)  
-notebooks/               # main analysis notebook  
-reports/  
-  figures/               # exported charts for README & slides  
-  Plymouth_Graduation_Project_Presentation.pdf  
-src/                     # helper scripts (e.g., synthetic data generator)  
-requirements.txt         # dependencies  
-README.md                # project documentation  
-
----
-
-## 🚀 How to Run (Synthetic Data Only)
-
-Install dependencies:
-
-pip install -r requirements.txt
-
-Generate synthetic data:
-
-python src/generate_synthetic.py
-
-This will create:
-
-data/synthetic_graduation_data.csv
-
-Launch Jupyter:
-
-jupyter notebook notebooks/Plymouth-Graduation-Project-Final-Clean_020325.ipynb
-
-When running outside a secure district environment, update the notebook to point at:
-
-data/synthetic_graduation_data.csv
-
-Note: Synthetic data is provided to illustrate pipeline structure and feature engineering only. Results are not intended to replicate the original analysis.
-
----
-
-## ▶️ Open in Google Colab
-
-https://colab.research.google.com/github/mtchynkstff/high-school-graduation/blob/main/notebooks/Plymouth-Graduation-Project-Final-Clean_020325.ipynb
+```text
+data/                    # synthetic or local student-level dataset (not tracked)
+notebooks/               # main analysis notebook
+reports/
+  figures/               # exported charts for README & slides
+  Plymouth_Graduation_Project_Presentation.pdf
+src/                     # helper scripts (e.g., synthetic data generator)
+requirements.txt         # dependencies
+README.md                # project documentation
+```
 
 ---
 
