@@ -5,7 +5,7 @@ regular attendance using machine learning. It is designed as a practical example
 
 🔗 For more information, you can read my full blog write-up on [Random Forests for the Trees](https://randomforestforthetrees.medium.com/from-student-learning-to-machine-learning-predicting-high-school-graduation-with-data-318497426015).
 
-📑 Additionally, you can download the full project presentation [here]((reports/Plymouth-HS_Data-Analysis_013025.pdf)).
+📑 Additionally, you can download the full project presentation [here](https://github.com/mtchynkstff/high-school-graduation/blob/main/reports/Plymouth-HS_Data-Analysis_013025.pdf).
 
 
 ---
