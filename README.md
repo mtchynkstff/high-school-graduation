@@ -4,11 +4,7 @@
 
 This project explores how machine learning can support **early identification of students at risk of not graduating on time or maintaining regular attendance**, using historical academic and engagement data.
 
-<<<<<<< HEAD
 I built and evaluated a **Random Forest–based early warning model** using real district data under FERPA constraints, with a strong emphasis on **interpretability, ethical use, and decision support rather than automation**.
-=======
-📑 Additionally, you can download the full project presentation [here](https://github.com/mtchynkstff/high-school-graduation/blob/main/reports/Plymouth-HS_Data-Analysis_013025.pdf).
->>>>>>> 011077406f36bad9ed0d4796386945c544080b84
 
 Because the original dataset contains protected student information, this public repository focuses on **methodology, modeling decisions, explainability, and stakeholder communication**, and uses **synthetic data** for demonstration purposes.
 
